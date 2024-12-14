@@ -5,7 +5,7 @@ import * as Colors from './utils'
 const WIDTH = Dimensions.get('screen').width
 
 interface PickerProps {
-    getColorPicker?: (color: string) => void
+    onChange?: (color: string) => void
     initColor: string
     numberColumn: number
     numberRow: number
@@ -84,8 +84,8 @@ export class Picker extends Component<PickerProps, PickerState> {
         const { h, s, v } = this.state;
         if (prevState.h !== h || prevState.s !== s || prevState.v !== v) {
             const hexColor = Colors.hsvToHex(h, s, v);
-            if (this.props.getColorPicker) {
-                this.props.getColorPicker(hexColor);
+            if (this.props.onChange) {
+                this.props.onChange(hexColor);
             }
             this.setState({ color: hexColor });
         }
