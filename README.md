@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
   box: { flex: 1, justifyContent: 'center', alignItems: 'center' }
 })
 ```
-| Prop                         | Type         | Default | Description                                                                                                                                                      |
-| ---------------------------- | ------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Prop                         | Type         | Default | Description                     |
+| ---------------------------- | ------------ | ------- | ------------------------------- |
 | width | number      | screen    |   length and width of the color palette |
 | initColor | string    |   #000         |   original color
 | numberColumn | number |   10         |   number of columns
@@ -40,3 +40,7 @@ const styles = StyleSheet.create({
 ## Event props :
 #### onChange
 Callback function when changing color
+
+| Prop                         | Type         | Description                     |
+| ---------------------------- | ------------ | --------------------------------|
+| color                        | string       |    color selected                         |  
