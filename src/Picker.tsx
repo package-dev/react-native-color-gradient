@@ -11,7 +11,7 @@ interface PickerProps {
     numberRow: number
     style?: ViewProps['style']
     width: number
-
+    hideColorSelected?: boolean
 
 }
 interface PickerState {
@@ -29,8 +29,8 @@ export class Picker extends Component<PickerProps, PickerState> {
         initColor: '#000',
         numberColumn: 10,
         numberRow: 10,
-        width: WIDTH
-
+        width: WIDTH,
+        hideColorSelected: false
     };
     constructor(props: PickerProps) {
         super(props)
@@ -92,6 +92,7 @@ export class Picker extends Component<PickerProps, PickerState> {
     }
     render() {
         const { s, v, h, color } = this.state
+        const { hideColorSelected } = this.props
         return (
             <View style={[styles.container, this.props.style]}>
                 <View style={{ transform: [{ rotateZ: '-90deg' }], width: this.props.width, height: this.props.width }}>
@@ -104,14 +105,16 @@ export class Picker extends Component<PickerProps, PickerState> {
                         </View>
                     )}
                 </View>
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
-                    <View style={{ width: this.squarel, height: this.squarel, borderRadius: 5, backgroundColor: color }} />
-                    <View style={{ width: this.squarer, paddingLeft: 10 }}>
-                        <Slider value={s} onValueChange={this.setS} maximumValue={100} />
-                        <Slider value={v} onValueChange={this.setV} maximumValue={100} />
-                        {/* <Slider value={h} onValueChange={this.setH} maximumValue={100} /> */}
+                {!hideColorSelected &&
+                    <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 10 }}>
+                        <View style={{ width: this.squarel, height: this.squarel, borderRadius: 5, backgroundColor: color }} />
+                        <View style={{ width: this.squarer, paddingLeft: 10 }}>
+                            <Slider value={s} onValueChange={this.setS} maximumValue={100} />
+                            <Slider value={v} onValueChange={this.setV} maximumValue={100} />
+                            {/* <Slider value={h} onValueChange={this.setH} maximumValue={100} /> */}
+                        </View>
                     </View>
-                </View>
+                }
             </View>
         )
     }

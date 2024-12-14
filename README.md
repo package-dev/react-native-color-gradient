@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
 | numberColumn | number |   10         |   number of columns
 | numberRow | number    |   10         |   number of rows
 | style | object    |   100         |   style
+| hideColorSelected | boolean    |   false         |   Hide selected color block and slider
 
 ## Event props :
 #### onChange
