@@ -1,0 +1,16 @@
+{
+  "name": "react-native-color-gradient",
+  "version": "1.0.0",
+  "repository": "https://github.com/phamha98/react-native-color-gradient",
+  "description": "color-gradient",
+  "author": "Phamha98",
+  "main": "index.tsx",
+  "scripts": {
+    "test": ""
+  },
+  "license": "ISC",
+  "keywords": [
+    "gradient",
+    "color"
+  ]
+}
